@@ -17,7 +17,6 @@ const meta = {
     size: 'md',
     disabled: false,
     loading: false,
-    fullWidth: false,
     onClick: fn(),
   },
 } satisfies Meta<typeof CustomButton>;

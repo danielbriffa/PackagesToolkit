@@ -1,7 +1,7 @@
 {
   "name": "component-toolkit",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
     "vue": "^3.5.30"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.2.19",
     "@storybook/test-runner": "^0.24.2",
     "@storybook/vue3-vite": "^10.2.19",
     "@types/node": "^24.12.0",

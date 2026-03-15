@@ -42,3 +42,9 @@ withDefaults(defineProps<{
 
 const emit = defineEmits<{ click: [event: MouseEvent] }>()
 </script>
+
+<style scoped>
+    .slot{
+        background-color: aquamarine;
+    }
+</style>
