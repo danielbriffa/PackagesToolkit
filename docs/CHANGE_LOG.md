@@ -26,7 +26,7 @@ Component: CustomButton
 Change: Added size prop
 ChangeType: 🌟
 
-## v0.2.0 — 2026-03-15
+## v0.2.0 — 2026-03-12
 Author: @DanielBriffa
 Component: CustomButton
 Change: Added size prop

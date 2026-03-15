@@ -1,0 +1,16 @@
+:root {
+    --button-padding-y: var(--space-3);
+    --button-padding-x: var(--space-4);
+
+    --button-radius: var(--radius-md);
+
+    --button-children-spacing: var(--space-2);
+
+    --button-primary-bg: var(--color-primary-600);
+    --button-primary-hover: var(--color-primary-500);
+    --button-primary-txt: var(--color-text-white);
+
+    --button-secondary-bg: var(--color-secondary-50);
+    --button-secondary-hover: var(--color-secondary-500);
+    --button-secondary-txt: var(--color-text-primary);
+}

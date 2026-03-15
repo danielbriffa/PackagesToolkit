@@ -1,0 +1,67 @@
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-radius);
+
+    font-family: var(--font-base);
+
+    cursor: pointer;
+
+    &.custom-button--primary {
+        background: var(--button-primary-bg);
+        color: var(--button-primary-txt);
+
+        &:hover {
+            background: var(--button-primary-hover);
+        }
+    }
+
+    &.custom-button--secondary {
+        background: var(--button-secondary-bg);
+        color: var(--button-secondary-txt);
+
+        &:hover {
+            background: var(--button-secondary-hover);
+        }
+    }
+
+    &.custom-button--danger {
+        background: var(--color-danger);
+        color: var(--button-primary-txt);
+
+        &:hover {
+            background: var(--color-danger);
+        }
+    }
+
+    &.custom-button--ghost {
+        background: var(--color-gray-50);
+        color: var(--color-gray-900);
+
+        &:hover {
+            background: var(--button-primary-hover);
+        }
+    }
+
+    & .custom-button__left-icon {
+        line-height: 0;
+    }
+
+    & .custom-button__loader {
+        line-height: 0;
+        animation: spin 0.75s linear infinite;
+    }
+
+    & .custom-button__right-icon {
+        line-height: 0;
+    }
+}

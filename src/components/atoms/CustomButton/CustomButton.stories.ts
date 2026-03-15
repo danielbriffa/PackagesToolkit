@@ -1,7 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { fn, expect, userEvent, within } from 'storybook/test';
+import { defineComponent, h } from 'vue';
 
 import CustomButton from './CustomButton.vue';
+
+const IconArrow = defineComponent({
+  render: () => h('svg', { viewBox: '0 0 16 16', fill: 'none', width: '1em', height: '1em', 'aria-hidden': 'true' }, [
+    h('path', { d: 'M3 8h10M9 4l4 4-4 4', stroke: 'currentColor', 'stroke-width': '1.5', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }),
+  ]),
+});
+
+const IconPlus = defineComponent({
+  render: () => h('svg', { viewBox: '0 0 16 16', fill: 'none', width: '1em', height: '1em', 'aria-hidden': 'true' }, [
+    h('path', { d: 'M8 3v10M3 8h10', stroke: 'currentColor', 'stroke-width': '1.5', 'stroke-linecap': 'round' }),
+  ]),
+});
 
 const meta = {
   title: 'Design System/atoms/CustomButton',
@@ -75,3 +88,30 @@ export const Primary: Story = { args: { variant: 'primary' } };
 export const Secondary: Story = { args: { variant: 'secondary' } };
 export const Danger: Story = { args: { variant: 'danger' } };
 export const Ghost: Story = { args: { variant: 'ghost' } };
+
+export const WithLeftIcon: Story = {
+  args: { label: 'Add item' },
+  render: (args) => ({
+    components: { CustomButton, IconPlus },
+    setup: () => ({ args }),
+    template: `<CustomButton v-bind="args"><template #left-icon><IconPlus /></template>{{ args.label }}</CustomButton>`,
+  }),
+};
+
+export const WithRightIcon: Story = {
+  args: { label: 'Next' },
+  render: (args) => ({
+    components: { CustomButton, IconArrow },
+    setup: () => ({ args }),
+    template: `<CustomButton v-bind="args">{{ args.label }}<template #right-icon><IconArrow /></template></CustomButton>`,
+  }),
+};
+
+export const WithBothIcons: Story = {
+  args: { label: 'Continue' },
+  render: (args) => ({
+    components: { CustomButton, IconPlus, IconArrow },
+    setup: () => ({ args }),
+    template: `<CustomButton v-bind="args"><template #left-icon><IconPlus /></template>{{ args.label }}<template #right-icon><IconArrow /></template></CustomButton>`,
+  }),
+};
