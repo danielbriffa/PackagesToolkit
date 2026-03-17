@@ -12,6 +12,11 @@ const atomEntries = Object.fromEntries(
 
 export default defineConfig({
   plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': resolve(import.meta.dirname, 'src'),
+    },
+  },
   build: {
     lib: {
       entry: {

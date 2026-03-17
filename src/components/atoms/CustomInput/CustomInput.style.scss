@@ -1,0 +1,87 @@
+.custom-input {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+
+    &__label {
+        font-family: var(--font-base);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--color-gray-900);
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--input-border);
+        border-radius: var(--input-radius);
+        background: var(--input-bg);
+        transition: border-color 0.15s, box-shadow 0.15s;
+
+        &:focus-within {
+            border-color: var(--input-border-focus);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-border-focus) 20%, transparent);
+        }
+    }
+
+    &__field {
+        flex: 1;
+        padding: var(--input-padding-y) var(--input-padding-x);
+        border: none;
+        outline: none;
+        background: transparent;
+        font-family: var(--font-base);
+        font-size: var(--text-md);
+        color: var(--color-gray-900);
+
+        &::placeholder {
+            color: var(--color-gray-500);
+        }
+    }
+
+    &__left-icon,
+    &__right-icon {
+        display: flex;
+        align-items: center;
+        padding: 0 var(--space-2);
+        color: var(--color-gray-500);
+        line-height: 0;
+    }
+
+    &__error {
+        font-family: var(--font-base);
+        font-size: var(--text-xs);
+        color: var(--input-border-error);
+    }
+
+    &--sm .custom-input__field {
+        font-size: var(--text-sm);
+        padding: var(--space-1) var(--space-2);
+    }
+
+    &--lg .custom-input__field {
+        font-size: var(--text-lg);
+        padding: var(--space-3) var(--space-4);
+    }
+
+    &--error .custom-input__wrapper {
+        border-color: var(--input-border-error);
+
+        &:focus-within {
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--input-border-error) 20%, transparent);
+        }
+    }
+
+    &--disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        .custom-input__wrapper {
+            background: var(--color-gray-100);
+        }
+
+        .custom-input__field {
+            cursor: not-allowed;
+        }
+    }
+}

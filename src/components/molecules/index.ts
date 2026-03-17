@@ -1,4 +1,7 @@
+/// <reference types="vite/client" />
 import type { Component } from 'vue'
+
+import.meta.glob('./*/*.style*.scss', { eager: true })
 
 const modules = import.meta.glob<{ default: Component }>('./*/*.vue', { eager: true })
 

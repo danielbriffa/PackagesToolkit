@@ -1,0 +1,94 @@
+.custom-modal {
+    background: var(--modal-bg);
+    border-radius: var(--modal-radius);
+    box-shadow: var(--modal-shadow);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    width: 100%;
+
+    &--sm { max-width: var(--modal-width-sm); }
+    &--md { max-width: var(--modal-width-md); }
+    &--lg { max-width: var(--modal-width-lg); }
+
+    &__backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: var(--modal-z-index);
+        padding: var(--space-4);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--space-4) var(--space-5);
+        border-bottom: 1px solid var(--color-gray-200);
+    }
+
+    &__title {
+        font-family: var(--font-heading);
+        font-size: var(--text-lg);
+        font-weight: 600;
+        color: var(--color-gray-900);
+    }
+
+    &__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-1);
+        border: none;
+        background: transparent;
+        color: var(--color-gray-500);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        line-height: 0;
+
+        &:hover {
+            background: var(--color-gray-100);
+            color: var(--color-gray-900);
+        }
+    }
+
+    &__body {
+        padding: var(--space-5);
+        overflow-y: auto;
+        flex: 1;
+        font-family: var(--font-base);
+        font-size: var(--text-md);
+        color: var(--color-gray-900);
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--space-3);
+        padding: var(--space-4) var(--space-5);
+        border-top: 1px solid var(--color-gray-200);
+    }
+}
+
+.custom-modal-enter-active,
+.custom-modal-leave-active {
+    transition: opacity 0.2s ease;
+
+    .custom-modal {
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+}
+
+.custom-modal-enter-from,
+.custom-modal-leave-to {
+    opacity: 0;
+
+    .custom-modal {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,11 @@
+:root {
+    --modal-bg: var(--color-white);
+    --modal-radius: var(--radius-lg);
+    --modal-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+    --modal-width-sm: 400px;
+    --modal-width-md: 560px;
+    --modal-width-lg: 720px;
+
+    --modal-z-index: 100;
+}
