@@ -1,38 +1,4 @@
 {
-  "name": "component-toolkit",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "test-storybook --url http://127.0.0.1:9009 && vue-tsc -b && vite build",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "test-storybook:coverage": "test-storybook --coverage",
-    "storybook:serve": "http-server storybook-static -p 6006",
-    "test-storybook": "test-storybook --url http://127.0.0.1:6006",
-    "test-storybook:ci": "concurrently -k -s first \"npm run storybook:serve\" \"wait-on http://127.0.0.1:6006 && npm run test-storybook\""
-  
-  },
-  "dependencies": {
-    "tslib": "^2.8.1",
-    "vue": "^3.5.30"
-  },
-  "devDependencies": {
-    "@storybook/addon-a11y": "^10.2.19",
-    "@storybook/test-runner": "^0.24.2",
-    "@storybook/vue3-vite": "^10.2.19",
-    "@types/node": "^24.12.0",
-    "@vitejs/plugin-vue": "^6.0.5",
-    "@vue/tsconfig": "^0.9.0",
-    "concurrently": "^9.2.1",
-    "http-server": "^14.1.1",
-    "sass": "^1.98.0",
-    "storybook": "^10.2.19",
-    "typescript": "~5.9.3",
-    "vite": "^8.0.0",
-    "vue-tsc": "^3.2.5",
-    "wait-on": "^9.0.4"
-  }
+  "name": "base-arch-toolkit",
+  "workspaces": ["packages/component_toolkit", "packages/helpers", "packages/configuration"]
 }
